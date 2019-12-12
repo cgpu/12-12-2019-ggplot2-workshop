@@ -48,7 +48,7 @@ library(dplyr)
 ### Opis 
 Celem poniższego zadania jest sprawdzanie swoich umiejętności w użyciu funkcji geom_point() z różnymi wartościami zaznaczonymi na osiach x i y. Ponadto, zaznaczyć należy państwa o najwyższym oraz najniższym współczynniku urodzeń na świecie.
 <center>
-![](img/zadanie1.png)
+![](img/exercise_1.png)
 </center>
 ```{r echo=TRUE,eval=FALSE}
 #install.packages("SmarterPoland")
@@ -64,7 +64,7 @@ library(SmarterPoland)
 Zadaniem jest przygotowanie porównania gęstości współczynnika zgonów na kontynentach za pomocą 5 figur, wyświetlonych na różnych panelach. Należy zwrócić uwagę na różne kolory wykresów, przerywaną linię oraz podpisy.
 
 <center>
-![](img/zadanie2.png)
+![](img/exercise_2.png)
 </center>
 
 <br /> <br /> 
@@ -75,7 +75,7 @@ Zadaniem jest przygotowanie porównania gęstości współczynnika zgonów na ko
 W zadaniu należy wykonać wizualizację rozkładu populacji wśród państw na różnych kontynentach, zarówno za pomocą wykresu skrzynkowego jak i punktowego. Zwróć uwagę na miarę zastosowaną w wyświetleniu skali y
 
 <center>
-![](img/zadanie3.png)
+![](img/exercise_3.png)
 </center>
 
 <br /> <br /> 
@@ -88,7 +88,7 @@ Ta wizualizacja zostanie przedstawiona na zbiorze danych iris, a jej celem jest 
 
 
 <center>
-![](img/zadanie4.png)
+![](img/exercise_4.png)
 </center>
 
 <br /> <br /> 
