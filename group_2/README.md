@@ -1,1 +1,2 @@
-Materiały z warsztatów ggplot2 w ramach Warszawskich Spotkań Entuzjastów R - GRUPA 2
+
+Materials from the ggplot2 workshops as part of [the Warsaw Meetings of Enthusiasts R](http://bit.ly/waRsaw_meetup) - Group 2
