@@ -1,16 +1,16 @@
 # 12-12-2019 ggplot2 workshop
 
-Materiały z warsztatów ggplot2 w ramach Warszawskich Spotkań Entuzjastów R
+Materials from the `ggplot2` workshops, part of [the Warsaw Meetings of Enthusiasts R](http://bit.ly/waRsaw_meetup)
 
-[GRUPA 1](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%201)
+[Group 1](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_1)
 
-[GRUPA 2](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%202)
+[Group 2](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_2)
 
-[GRUPA 3](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%203)
+[Group 3](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_3)
 
-[GRUPA 4](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%204)
+[Group 4](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_4)
 
-[GRUPA 5](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%205)
+[Group 5](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_5)
 
 
-## Ankieta [link](https://forms.gle/uU5sQdT2CANbyHVUA)
+## :question: Questionnaire [link](https://forms.gle/uU5sQdT2CANbyHVUA)
