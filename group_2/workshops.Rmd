@@ -198,7 +198,7 @@ ggplot(countries, aes(x = death.rate, y = birth.rate)) +
 
 # Zadanie do wykonania
 Stwórz następujące wykresy:
-![](zadanie1.png)
-![](zadanie2.png)
-![](zadanie3.png)
-![](zadanie4.png)
+![](exercise_1.png)
+![](exercise_2.png)
+![](exercise_3.png)
+![](exercise_4.png)
