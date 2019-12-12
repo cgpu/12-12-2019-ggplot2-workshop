@@ -390,8 +390,8 @@ p + coord_polar()
 
 # ZADANIE KOŃCOWE (LAST TASK)
 
-Wybierz dowolny wykres z katalogu [link](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%205/wykresy) i narysuj go w ggplot2. Dane do poszczególnych wykresów znajdziesz w katalogu data.
+Wybierz dowolny wykres z katalogu [link](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_5/charts) i narysuj go w ggplot2. Dane do poszczególnych wykresów znajdziesz w katalogu data.
 Podziel się z nami swoją grafiką (link w [README](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop))
 
-Select any chart from the catalog [link](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop/tree/master/GRUPA%205/wykresy) and draw it in ggplot2. Data for individual charts can be found in the data catalog.
+Select any chart from the catalog [link](https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/english/group_5/charts) and draw it in ggplot2. Data for individual charts can be found in the data catalog.
 Share your graphics with us (link in [README](https://github.com/R-Ladies-Warsaw/12-12-2019-ggplot2-workshop))
