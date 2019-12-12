@@ -1,7 +1,7 @@
 library(ggplot2)
 library(dplyr)
 
-movies <- read.csv("zadania/data/movie_metadata.csv")
+movies <- read.csv("exercises/data/movie_metadata.csv")
 
 movies_actors <- movies%>%
     group_by(aktor=actor_1_name)%>%
