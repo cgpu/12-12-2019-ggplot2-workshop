@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="" />
 
 
 <title>A set of tasks for getting familiar with the {ggplot2} R package</title>
@@ -23,6 +24,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
@@ -69,8 +72,12 @@ h6 {
 .table th:not([align]) {
   text-align: left;
 }
+#rmd-source-code {
+  display: none;
+}
 </style>
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -248,6 +255,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -373,6 +383,16 @@ div.section {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">A set of tasks for getting familiar with the <code>{ggplot2}</code> R package</h1>
@@ -492,10 +512,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcgpu12122019ggplot2workshoptree35abbdb5d14a928937f6910c00042a10ef3c7cf0targetblank35abbdba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/35abbdb5d14a928937f6910c00042a10ef3c7cf0" target="_blank">35abbdb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcgpu12122019ggplot2workshoptreee4844eb56fb7905c9c4014304daddf5ee5a51050targetblanke4844eba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cgpu/12-12-2019-ggplot2-workshop/tree/e4844eb56fb7905c9c4014304daddf5ee5a51050" target="_blank">e4844eb</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcgpu12122019ggplot2workshoptree35abbdb5d14a928937f6910c00042a10ef3c7cf0targetblank35abbdba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcgpu12122019ggplot2workshoptreee4844eb56fb7905c9c4014304daddf5ee5a51050targetblanke4844eba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -547,6 +567,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cgpu/12-12-2019-ggplot2-workshop/blob/e4844eb56fb7905c9c4014304daddf5ee5a51050/analysis/exercises.Rmd" target="_blank">e4844eb</a>
+</td>
+<td>
+cgpu
+</td>
+<td>
+2019-12-26
+</td>
+<td>
+Updates exercises.Rmd to display properly style.css
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cgpu/12-12-2019-ggplot2-workshop/e2e8e93b1744b3f2ce0c48850e546f6d4aae0ed8/docs/exercises.html" target="_blank">e2e8e93</a>
+</td>
+<td>
+cgpu
+</td>
+<td>
+2019-12-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cgpu/12-12-2019-ggplot2-workshop/blob/35abbdb5d14a928937f6910c00042a10ef3c7cf0/analysis/exercises.Rmd" target="_blank">35abbdb</a>
 </td>
 <td>
@@ -584,17 +638,17 @@ Migrating exercises/ into analysis/ and docs/ - {workflowr}
 </div>
 </div>
 <div id="introduction" class="section level1">
-<h1>Introduction</h1>
+<h1><span class="header-section-number">1</span> Introduction</h1>
 <div id="description" class="section level2">
-<h2>Description</h2>
+<h2><span class="header-section-number">1.1</span> Description</h2>
 <p>Below is a list of tasks that were developed in different groups for ggplot workshops on December 12, 2019. <a href="https://www.facebook.com/events/2336582616605870/" class="uri">https://www.facebook.com/events/2336582616605870/</a></p>
 </div>
 <div id="task-difficulty" class="section level2">
-<h2>Task difficulty</h2>
+<h2><span class="header-section-number">1.2</span> Task difficulty</h2>
 <p>Task difficulties are described by stars (<code>*</code>) next to their titles and they correspond to the estimated times that a novice participant should devote to them, where: <br /> * - for 10 min<br /> ** - for 20 min<br /> *** - more than 30 min<br /></p>
 </div>
 <div id="template-format" class="section level2">
-<h2>Template (format)</h2>
+<h2><span class="header-section-number">1.3</span> Template (format)</h2>
 <pre><code>## TITLE Difficulty * / ** / *** 
 
 {short description of what you need to do in the task}</code></pre>
@@ -610,9 +664,9 @@ library(dplyr)
 </div>
 </div>
 <div id="exercises" class="section level1">
-<h1>Exercises</h1>
+<h1><span class="header-section-number">2</span> Exercises</h1>
 <div id="a-scatter-plot-of-the-dependence-of-coefficients-with-highlighted-countries" class="section level2">
-<h2>A scatter plot of the dependence of coefficients with highlighted countries *</h2>
+<h2><span class="header-section-number">2.1</span> A scatter plot of the dependence of coefficients with highlighted countries *</h2>
 The purpose of the following task is to test your skills in using the <code>geom_point ()</code> function with various values marked on the <code>x</code> and <code>y</code> axes. In addition, (figure out how to) select the countries with the highest and lowest birth rates in the world.
 <center>
 <img src="assets/exercises/exercise_1.png" />
@@ -623,7 +677,7 @@ library(SmarterPoland)</code></pre>
 <p><br /> <br /></p>
 </div>
 <div id="density-of-death-rates-on-different-continents" class="section level2">
-<h2>Density of death rates on different continents **</h2>
+<h2><span class="header-section-number">2.2</span> Density of death rates on different continents **</h2>
 The task is to prepare a density comparison of the death rate on continents using 5 figures displayed on different panels. Note the different graph colors, dotted lines and signatures.
 <center>
 <img src="assets/exercises/exercise_2.png" />
@@ -631,7 +685,7 @@ The task is to prepare a density comparison of the death rate on continents usin
 <p><br /> <br /></p>
 </div>
 <div id="populations" class="section level2">
-<h2>Populations *</h2>
+<h2><span class="header-section-number">2.3</span> Populations *</h2>
 <p>The task should visualize the distribution of population among countries on different continents, both using a box and a scatter plot. Note the measure used in the <code>y</code> scale display.</p>
 <center>
 <img src="assets/exercises/exercise_3.png" />
@@ -639,7 +693,7 @@ The task is to prepare a density comparison of the death rate on continents usin
 <p><br /> <br /></p>
 </div>
 <div id="complex-column-chart" class="section level2">
-<h2>Complex column chart **</h2>
+<h2><span class="header-section-number">2.4</span> Complex column chart **</h2>
 <p>This visualisation will be generated for the <code>iris</code> data set and its purpose is to present different average values for individual species.</p>
 <center>
 <img src="assets/exercises/exercise_4.png" />
@@ -650,7 +704,7 @@ library(reshape2)
 iris2 &lt;- melt(iris, id.vars=&quot;Species&quot;)</code></pre>
 </div>
 <div id="movie-ratings" class="section level2">
-<h2>Movie ratings *</h2>
+<h2><span class="header-section-number">2.5</span> Movie ratings *</h2>
 <p>The goal is to present the number of films in various evaluation ranges from the IMDB website. (The size of the compartments is free, you don’t have to specify it to solve the task). The task requires the use of only basic functions and ggplot2 geometry</p>
 <pre class="r"><code>library(ggplot2)
 library(dplyr)
@@ -659,7 +713,7 @@ movies &lt;- read.csv(&quot;data/movie_metadata.csv&quot;)</code></pre>
 <p><br /> <br /></p>
 </div>
 <div id="movie-budgets" class="section level2">
-<h2>Movie budgets *</h2>
+<h2><span class="header-section-number">2.6</span> Movie budgets *</h2>
 <p>Visualisation of the trend line of budgets in films over the years <br /> a) all IMDb films <br /> b) TOP 500 IMDb films, is everything OK with this visualisation?<br /></p>
 <pre class="r"><code>library(ggplot2)
 library(dplyr)
@@ -671,7 +725,7 @@ movies500 &lt;- head(movies, 500)</code></pre>
 <p><br /> <br /></p>
 </div>
 <div id="actors" class="section level2">
-<h2>Actors **</h2>
+<h2><span class="header-section-number">2.7</span> Actors **</h2>
 The goal in this task is to reproduce the graph below with as many details as possible. To facilitate the task, two functions have been given, the use of which is practically necessary.
 <center>
 <img src="assets/exercises/g3_styl_2.png" />
@@ -695,7 +749,7 @@ head(movies_actors)
 <p><br /> <br /></p>
 </div>
 <div id="are-the-movies-getting-worse" class="section level2">
-<h2>Are the movies getting worse? ***</h2>
+<h2><span class="header-section-number">2.8</span> Are the movies getting worse? ***</h2>
 <p>The goal of the task is to accurately reproduce the graph from the photo below</p>
 <center>
 <img src="assets/exercises/g3_styl_1.png" />
@@ -741,11 +795,13 @@ loaded via a namespace (and not attached):
  [9] evaluate_0.14   stringi_1.4.3   rlang_0.4.2     fs_1.3.1       
 [13] promises_1.1.0  whisker_0.4     rmarkdown_2.0   tools_3.6.0    
 [17] stringr_1.4.0   glue_1.3.1      httpuv_1.5.2    xfun_0.11      
-[21] yaml_2.2.0      compiler_3.6.0  htmltools_0.4.0 knitr_1.26     </code></pre>
+[21] yaml_2.2.0      compiler_3.6.0  base64enc_0.1-3 htmltools_0.4.0
+[25] knitr_1.26     </code></pre>
 </div>
 </div>
 </div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQSBzZXQgb2YgdGFza3MgZm9yIGdldHRpbmcgZmFtaWxpYXIgd2l0aCB0aGUgYHtnZ3Bsb3QyfWAgUiBwYWNrYWdlIgpzdWJ0aXRsZTogIlRoZSB0YXNrcyBhcmUgZnJvbSB0aGUgd29ya3Nob3BzIG9yZ2FuaXNlZCBmb3IgRGVjZW1iZXIgMTIsIDIwMTkiCmF1dGhvcjogIiIKZGF0ZTogIiIKb3V0cHV0OiAKICB3b3JrZmxvd3I6OndmbG93X2h0bWw6CiAgICBjb2RlX2ZvbGRpbmc6IGhpZGUKICAgIGNvZGVfZG93bmxvYWQ6IHRydWUKICAgIHRvYzogdHJ1ZSAgICAgICAgICAgICAgICAgICMgdGFibGUgb2YgY29udGVudCB0cnVlCiAgICB0b2NfZGVwdGg6IDMgICAgICAgICAgICAgICAjIHVwdG8gdGhyZWUgZGVwdGhzIG9mIGhlYWRpbmdzIChzcGVjaWZpZWQgYnkgIywgIyMgYW5kICMjIykKICAgIHRvY19mbG9hdDogdHJ1ZQogICAgbnVtYmVyX3NlY3Rpb25zOiB0cnVlICAgICAjIGlmIHlvdSB3YW50IG51bWJlciBzZWN0aW9ucyBhdCBlYWNoIHRhYmxlIGhlYWRlcgogICAgdGhlbWU6IGNvc21vICAgICAgICAgICAgICAjIG1hbnkgb3B0aW9ucyBmb3IgdGhlbWUsIHRoaXMgb25lIGlzIG15IGZhdm9yaXRlLgogICAgaGlnaGxpZ2h0OiB0ZXh0bWF0ZSAgICAgICAgICAgIyBzcGVjaWZpZXMgdGhlIHN5bnRheCBoaWdobGlnaHRpbmcgc3R5bGUKICAgIGNzczogc3R5bGUuY3NzICAgICAgICAgICAgICAgIyB5b3UgY2FuIGFkZCB5b3VyIGN1c3RvbSBjc3MsIHNob3VsZCBiZSBpbiBzYW1lIGZvbGRlcgogICAgIyBvdmVycmlkZSBkZWZhdWx0cyBieSBjYWxsaW5nIHdpdGggY3VzdG9tIHBhcmFtcyBmcm9tIGNvbW1hbmQgbGluZSBodHRwczovL2Jvb2tkb3duLm9yZy95aWh1aS9ybWFya2Rvd24vcGFyYW1zLWtuaXQuaHRtbCAxNS4zLjIKZWRpdG9yX29wdGlvbnM6CiAgY2h1bmtfb3V0cHV0X3R5cGU6IGNvbnNvbGUKLS0tCgoKCiMgSW50cm9kdWN0aW9uCgojIyBEZXNjcmlwdGlvbgoKQmVsb3cgaXMgYSBsaXN0IG9mIHRhc2tzIHRoYXQgd2VyZSBkZXZlbG9wZWQgaW4gZGlmZmVyZW50IGdyb3VwcyBmb3IgZ2dwbG90IHdvcmtzaG9wcyBvbiBEZWNlbWJlciAxMiwgMjAxOS4gaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy8yMzM2NTgyNjE2NjA1ODcwLwoKCiMjIFRhc2sgZGlmZmljdWx0eQoKClRhc2sgZGlmZmljdWx0aWVzIGFyZSBkZXNjcmliZWQgYnkgc3RhcnMgKGAqYCkgbmV4dCB0byB0aGVpciB0aXRsZXMgYW5kIHRoZXkgY29ycmVzcG9uZCB0byB0aGUgZXN0aW1hdGVkIHRpbWVzIHRoYXQgYSBub3ZpY2UgcGFydGljaXBhbnQgc2hvdWxkIGRldm90ZSB0byB0aGVtLCB3aGVyZToKPGJyIC8+CiogLSBmb3IgMTAgbWluPGJyIC8+CioqICAtIGZvciAyMCBtaW48YnIgLz4KKioqIC0gbW9yZSB0aGFuIDMwIG1pbjxiciAvPgoKIyMgVGVtcGxhdGUgKGZvcm1hdCkKCmBgYAojIyBUSVRMRSBEaWZmaWN1bHR5ICogLyAqKiAvICoqKiAKCntzaG9ydCBkZXNjcmlwdGlvbiBvZiB3aGF0IHlvdSBuZWVkIHRvIGRvIGluIHRoZSB0YXNrfQpgYGAKCjxjZW50ZXI+CiFbXShhc3NldHMvZXhlcmNpc2VzL2czX3N0eWxfMi5wbmcpCjwvY2VudGVyPgoKYGBge3IgZWNobz1UUlVFLGV2YWw9RkFMU0V9CmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkcGx5cikKCgojbG9hZGluZyByZWxldmFudCBkYXRhIGV0Yy4KCmBgYAo8YnIgLz4gPGJyIC8+IAoKIyBFeGVyY2lzZXMKCiMjICBBIHNjYXR0ZXIgcGxvdCBvZiB0aGUgZGVwZW5kZW5jZSBvZiBjb2VmZmljaWVudHMgd2l0aCBoaWdobGlnaHRlZCBjb3VudHJpZXMgKgoKCgpUaGUgcHVycG9zZSBvZiB0aGUgZm9sbG93aW5nIHRhc2sgaXMgdG8gdGVzdCB5b3VyIHNraWxscyBpbiB1c2luZyB0aGUgYGdlb21fcG9pbnQgKClgIGZ1bmN0aW9uIHdpdGggdmFyaW91cyB2YWx1ZXMgbWFya2VkIG9uIHRoZSBgeGAgYW5kIGB5YCBheGVzLiBJbiBhZGRpdGlvbiwgKGZpZ3VyZSBvdXQgaG93IHRvKSBzZWxlY3QgdGhlIGNvdW50cmllcyB3aXRoIHRoZSBoaWdoZXN0IGFuZCBsb3dlc3QgYmlydGggcmF0ZXMgaW4gdGhlIHdvcmxkLgo8Y2VudGVyPgohW10oYXNzZXRzL2V4ZXJjaXNlcy9leGVyY2lzZV8xLnBuZykKPC9jZW50ZXI+CmBgYHtyIGVjaG89VFJVRSxldmFsPUZBTFNFfQojaW5zdGFsbC5wYWNrYWdlcygiU21hcnRlclBvbGFuZCIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShTbWFydGVyUG9sYW5kKQoKYGBgCjxiciAvPiA8YnIgLz4gCgojIyBEZW5zaXR5IG9mIGRlYXRoIHJhdGVzIG9uIGRpZmZlcmVudCBjb250aW5lbnRzICoqCgoKClRoZSB0YXNrIGlzIHRvIHByZXBhcmUgYSBkZW5zaXR5IGNvbXBhcmlzb24gb2YgdGhlIGRlYXRoIHJhdGUgb24gY29udGluZW50cyB1c2luZyA1IGZpZ3VyZXMgZGlzcGxheWVkIG9uIGRpZmZlcmVudCBwYW5lbHMuIE5vdGUgdGhlIGRpZmZlcmVudCBncmFwaCBjb2xvcnMsIGRvdHRlZCBsaW5lcyBhbmQgc2lnbmF0dXJlcy4KPGNlbnRlcj4KIVtdKGFzc2V0cy9leGVyY2lzZXMvZXhlcmNpc2VfMi5wbmcpCjwvY2VudGVyPgoKPGJyIC8+IDxiciAvPiAKCiMjIFBvcHVsYXRpb25zICoKCgoKVGhlIHRhc2sgc2hvdWxkIHZpc3VhbGl6ZSB0aGUgZGlzdHJpYnV0aW9uIG9mIHBvcHVsYXRpb24gYW1vbmcgY291bnRyaWVzIG9uIGRpZmZlcmVudCBjb250aW5lbnRzLCBib3RoIHVzaW5nIGEgYm94IGFuZCBhIHNjYXR0ZXIgcGxvdC4gTm90ZSB0aGUgbWVhc3VyZSB1c2VkIGluIHRoZSBgeWAgc2NhbGUgZGlzcGxheS4KCjxjZW50ZXI+CiFbXShhc3NldHMvZXhlcmNpc2VzL2V4ZXJjaXNlXzMucG5nKQo8L2NlbnRlcj4KCjxiciAvPiA8YnIgLz4gCgojIyBDb21wbGV4IGNvbHVtbiBjaGFydCAqKgoKCgpUaGlzIHZpc3VhbGlzYXRpb24gd2lsbCBiZSBnZW5lcmF0ZWQgZm9yIHRoZSBgaXJpc2AgZGF0YSBzZXQgYW5kIGl0cyBwdXJwb3NlIGlzIHRvIHByZXNlbnQgZGlmZmVyZW50IGF2ZXJhZ2UgdmFsdWVzIGZvciBpbmRpdmlkdWFsIHNwZWNpZXMuCgo8Y2VudGVyPgohW10oYXNzZXRzL2V4ZXJjaXNlcy9leGVyY2lzZV80LnBuZykKPC9jZW50ZXI+Cgo8YnIgLz4gPGJyIC8+IAoKYGBge3IgZWNobz1UUlVFLGV2YWw9RkFMU0V9CmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyZXNoYXBlMikKaXJpczIgPC0gbWVsdChpcmlzLCBpZC52YXJzPSJTcGVjaWVzIikKCmBgYAoKIyMgTW92aWUgcmF0aW5ncyAqIAoKCgpUaGUgZ29hbCBpcyB0byBwcmVzZW50IHRoZSBudW1iZXIgb2YgZmlsbXMgaW4gdmFyaW91cyBldmFsdWF0aW9uIHJhbmdlcyBmcm9tIHRoZSBJTURCIHdlYnNpdGUuCihUaGUgc2l6ZSBvZiB0aGUgY29tcGFydG1lbnRzIGlzIGZyZWUsIHlvdSBkb24ndCBoYXZlIHRvIHNwZWNpZnkgaXQgdG8gc29sdmUgdGhlIHRhc2spLgpUaGUgdGFzayByZXF1aXJlcyB0aGUgdXNlIG9mIG9ubHkgYmFzaWMgZnVuY3Rpb25zIGFuZCBnZ3Bsb3QyIGdlb21ldHJ5CgpgYGB7ciBlY2hvPVRSVUUsZXZhbD1GQUxTRX0KbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQoKbW92aWVzIDwtIHJlYWQuY3N2KCJkYXRhL21vdmllX21ldGFkYXRhLmNzdiIpCgoKYGBgCjxiciAvPiA8YnIgLz4gCgojIyBNb3ZpZSBidWRnZXRzICoKCgoKVmlzdWFsaXNhdGlvbiBvZiB0aGUgdHJlbmQgbGluZSBvZiBidWRnZXRzIGluIGZpbG1zIG92ZXIgdGhlIHllYXJzIDxiciAvPgphKSBhbGwgSU1EYiBmaWxtcyA8YnIgLz4KYikgVE9QIDUwMCBJTURiIGZpbG1zLCBpcyBldmVyeXRoaW5nIE9LIHdpdGggdGhpcyB2aXN1YWxpc2F0aW9uPzxiciAvPgoKYGBge3IgZWNobz1UUlVFLGV2YWw9RkFMU0V9CmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkcGx5cikKCm1vdmllcyA8LSByZWFkLmNzdigiZGF0YS9tb3ZpZV9tZXRhZGF0YS5jc3YiKQoKbW92aWVzNTAwIDwtIGFycmFuZ2UobW92aWVzLCBkZXNjKG51bV92b3RlZF91c2VycykpCm1vdmllczUwMCA8LSBoZWFkKG1vdmllcywgNTAwKQoKCgpgYGAKPGJyIC8+IDxiciAvPiAKCiMjIEFjdG9ycyAqKgoKCgpUaGUgZ29hbCBpbiB0aGlzIHRhc2sgaXMgdG8gcmVwcm9kdWNlIHRoZSBncmFwaCBiZWxvdyB3aXRoIGFzIG1hbnkgZGV0YWlscyBhcyBwb3NzaWJsZS4KVG8gZmFjaWxpdGF0ZSB0aGUgdGFzaywgdHdvIGZ1bmN0aW9ucyBoYXZlIGJlZW4gZ2l2ZW4sIHRoZSB1c2Ugb2Ygd2hpY2ggaXMgcHJhY3RpY2FsbHkgbmVjZXNzYXJ5Lgo8Y2VudGVyPgohW10oYXNzZXRzL2V4ZXJjaXNlcy9nM19zdHlsXzIucG5nKQo8L2NlbnRlcj4KCmBgYHtyIGVjaG89VFJVRSxldmFsPUZBTFNFfQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkoZHBseXIpCgptb3ZpZXMgPC0gcmVhZC5jc3YoImRhdGEvbW92aWVfbWV0YWRhdGEuY3N2IikKCm1vdmllc19hY3RvcnMgPC0gbW92aWVzJT4lCiAgZ3JvdXBfYnkoYWt0b3I9YWN0b3JfMV9uYW1lKSU+JQogIHN1bW1hcmlzZShpbG9zYz1uKCkpJT4lCiAgYXJyYW5nZShkZXNjKGlsb3NjKSklPiUKICBoZWFkKDYpCgpoZWFkKG1vdmllc19hY3RvcnMpCgojIDIgbmV3IHRoaW5ncyB5b3Ugd2lsbCBuZWVkIHRvIHVzZQo/IGdlb21fY29sCj8gY29vcmRfZmxpcApgYGAKPGJyIC8+IDxiciAvPiAKCiMjIEFyZSB0aGUgbW92aWVzIGdldHRpbmcgd29yc2U/ICoqKgoKClRoZSBnb2FsIG9mIHRoZSB0YXNrIGlzIHRvIGFjY3VyYXRlbHkgcmVwcm9kdWNlIHRoZSBncmFwaCBmcm9tIHRoZSBwaG90byBiZWxvdwoKPGNlbnRlcj4KIVtdKGFzc2V0cy9leGVyY2lzZXMvZzNfc3R5bF8xLnBuZykKPC9jZW50ZXI+CgpgYGB7ciBlY2hvPVRSVUUsZXZhbD1GQUxTRX0KbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KGRwbHlyKQoKCm1vdmllcyA8LSByZWFkLmNzdigiZGF0YS9tb3ZpZV9tZXRhZGF0YS5jc3YiKQoKbW92aWVzX3llYXIgPC0gbW92aWVzJT4lCiAgZ3JvdXBfYnkodGl0bGVfeWVhciklPiUKICBzdW1tYXJpc2Uoc2NvcmU9bWVhbihpbWRiX3Njb3JlKSkKCgoKYGBgCgo8YnIgLz4gPGJyIC8+</div>
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
 TeX fonts only; see
@@ -793,6 +849,12 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("exercises.Rmd");
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
