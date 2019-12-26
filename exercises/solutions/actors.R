@@ -13,7 +13,7 @@ movies_actors <- movies%>%
 ggplot(movies_actors,aes(aktor,ilosc))+
     geom_col(width = 0.8,fill="#f35f71")+
     geom_text(aes(label=ilosc),nudge_y = -3, color="white",size=6)+
-    labs(title="Role pierwszoplanowe",y="Ilość ról pierwszoplanowych")+
+    labs(title="starring roles",y="Number of starring roles")+
     coord_flip()+
     theme(
         
