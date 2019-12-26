@@ -41,7 +41,7 @@ Task difficulties are described by stars (`*`) next to their titles and they cor
 ```
 
 <center>
-![](img/g3_styl_2.png)
+![](assets/exercises/g3_styl_2.png)
 </center>
 
 ```{r echo=TRUE,eval=FALSE}
@@ -62,7 +62,7 @@ library(dplyr)
 
 The purpose of the following task is to test your skills in using the `geom_point ()` function with various values marked on the `x` and `y` axes. In addition, (figure out how to) select the countries with the highest and lowest birth rates in the world.
 <center>
-![](img/exercise_1.png)
+![](assets/exercises/exercise_1.png)
 </center>
 ```{r echo=TRUE,eval=FALSE}
 #install.packages("SmarterPoland")
@@ -78,7 +78,7 @@ library(SmarterPoland)
 
 The task is to prepare a density comparison of the death rate on continents using 5 figures displayed on different panels. Note the different graph colors, dotted lines and signatures.
 <center>
-![](img/exercise_2.png)
+![](assets/exercises/exercise_2.png)
 </center>
 
 <br /> <br /> 
@@ -90,7 +90,7 @@ The task is to prepare a density comparison of the death rate on continents usin
 The task should visualize the distribution of population among countries on different continents, both using a box and a scatter plot. Note the measure used in the `y` scale display.
 
 <center>
-![](img/exercise_3.png)
+![](assets/exercises/exercise_3.png)
 </center>
 
 <br /> <br /> 
@@ -99,10 +99,10 @@ The task should visualize the distribution of population among countries on diff
 
 
 
-This visualisation will be generated for the `iris` data set and its purpose is to present different average values for individual species.
+This visualisation will be generated for the `iris` data set and its purpose is to present different average values for individual species.
 
 <center>
-![](img/exercise_4.png)
+![](assets/exercises/exercise_4.png)
 </center>
 
 <br /> <br /> 
@@ -161,7 +161,7 @@ movies500 <- head(movies, 500)
 The goal in this task is to reproduce the graph below with as many details as possible.
 To facilitate the task, two functions have been given, the use of which is practically necessary.
 <center>
-![](img/g3_styl_2.png)
+![](assets/exercises/g3_styl_2.png)
 </center>
 
 ```{r echo=TRUE,eval=FALSE}
@@ -190,7 +190,7 @@ head(movies_actors)
 The goal of the task is to accurately reproduce the graph from the photo below
 
 <center>
-![](img/g3_styl_1.png)
+![](assets/exercises/g3_styl_1.png)
 </center>
 
 ```{r echo=TRUE,eval=FALSE}
