@@ -1,52 +1,66 @@
 ---
-date: "12 12 2019"
-output: html_document
+title: "A set of tasks for getting familiar with the `{ggplot2}` R package"
+subtitle: "The tasks are from the workshops organised for December 12, 2019"
+output:
+  html_document:
+    df_print: paged
+    code_folding: show
+    code_download: true
+    toc: true                  # table of content true
+    toc_depth: 3               # upto three depths of headings (specified by #, ## and ###)
+    toc_float: true
+    number_sections: true     # if you want number sections at each table header
+    theme: united              # many options for theme, this one is my favorite.
+    highlight: tango           # specifies the syntax highlighting style---
+    css: style.css
 ---
 
-<center> <h1>Zbiór zadań z ggplot</h1> </center>
-<center> <h3>zadania pochodzą z warsztatów <br /> organizowanych 12 grudnia 2019</h3> </center>
+
+# Introduction
+
+## Description
+
+Below is a list of tasks that were developed in different groups for ggplot workshops on December 12, 2019. https://www.facebook.com/events/2336582616605870/
 
 
-# Opis
-Poniżej zamieszczona jest lista zadań, która była opracowywana w różnych grupach na warszatach ggplot 12 grudnia 2019r. https://www.facebook.com/events/2336582616605870/
+## Task difficulty
 
-### Trudność zadań
 
-Trudnosci zadań opsane są gwiazdkami przy ich tytułach i odpowiadają one szacowanym czasom, które początkujący uczestnik powinien na nie poświęcić, gdzie:
+Task difficulties are described by stars (`*`) next to their titles and they correspond to the estimated times that a novice participant should devote to them, where:
 <br />
-* - do 10 min<br />
-**  - do 20 min<br />
-*** - powyżej 30 min<br />
+* - for 10 min<br />
+**  - for 20 min<br />
+*** - more than 30 min<br />
 
+## Template (format)
 
-<center>
-<h1>Zadania</h1> 
-</center>
+```
+## TITLE Difficulty * / ** / *** 
 
-
-### Wzorzec
-
-## TYTUŁ Trudność * / ** / *** 
-### Opis 
-{krótki opis, o co trzeba zrobić w zadaniu}
+{short description of what you need to do in the task}
+```
 
 <center>
 ![](img/g3_styl_2.png)
 </center>
+
 ```{r echo=TRUE,eval=FALSE}
 library(ggplot2)
 library(dplyr)
 
 
-#wczytanie odpowiednich danych itd
+#loading relevant data etc.
 
 ```
 <br /> <br /> 
 
-## 1. Punktowy wykres zależności współczynników wraz z wyróżnionymi krajami *
+# Exercises
 
-### Opis 
-Celem poniższego zadania jest sprawdzanie swoich umiejętności w użyciu funkcji geom_point() z różnymi wartościami zaznaczonymi na osiach x i y. Ponadto, zaznaczyć należy państwa o najwyższym oraz najniższym współczynniku urodzeń na świecie.
+##  A scatter plot of the dependence of coefficients with highlighted countries *
+
+
+
+The purpose of the following task is to test your skills in using the `geom_point ()` function with various values marked on the `x` and `y` axes. In addition, (figure out how to) select the countries with the highest and lowest birth rates in the world.
 <center>
 ![](img/exercise_1.png)
 </center>
@@ -58,21 +72,22 @@ library(SmarterPoland)
 ```
 <br /> <br /> 
 
-## 2. Gęstości współczynników zgonów na różnych kontynentach **
+## Density of death rates on different continents **
 
-### Opis 
-Zadaniem jest przygotowanie porównania gęstości współczynnika zgonów na kontynentach za pomocą 5 figur, wyświetlonych na różnych panelach. Należy zwrócić uwagę na różne kolory wykresów, przerywaną linię oraz podpisy.
 
+
+The task is to prepare a density comparison of the death rate on continents using 5 figures displayed on different panels. Note the different graph colors, dotted lines and signatures.
 <center>
 ![](img/exercise_2.png)
 </center>
 
 <br /> <br /> 
 
-## 3. Populacje *
+## Populations *
 
-### Opis
-W zadaniu należy wykonać wizualizację rozkładu populacji wśród państw na różnych kontynentach, zarówno za pomocą wykresu skrzynkowego jak i punktowego. Zwróć uwagę na miarę zastosowaną w wyświetleniu skali y
+
+
+The task should visualize the distribution of population among countries on different continents, both using a box and a scatter plot. Note the measure used in the `y` scale display.
 
 <center>
 ![](img/exercise_3.png)
@@ -80,12 +95,11 @@ W zadaniu należy wykonać wizualizację rozkładu populacji wśród państw na 
 
 <br /> <br /> 
 
-## 4. Złożony wykres kolumnowy **
-
-### Opis
-Ta wizualizacja zostanie przedstawiona na zbiorze danych iris, a jej celem jest prezentacja różnych średnich wartości dla poszczególnych gatunków. 
+## Complex column chart **
 
 
+
+This visualisation will be generated for the `iris` data set and its purpose is to present different average values for individual species.
 
 <center>
 ![](img/exercise_4.png)
@@ -100,12 +114,13 @@ iris2 <- melt(iris, id.vars="Species")
 
 ```
 
-## 5. Oceny filmów * 
+## Movie ratings * 
 
-### Opis 
-Celem jest przedstawienie ilości filmów, w różnych przedziałach oceny z serwisu IMDB.
-(Sama wielkość przedziałów jest dowolna, nie trzeba jej określać by rozwiązać zadanie).
-Zadanie wymaga użycia jedynie podstawowych funkcji i geometrii ggplot2
+
+
+The goal is to present the number of films in various evaluation ranges from the IMDB website.
+(The size of the compartments is free, you don't have to specify it to solve the task).
+The task requires the use of only basic functions and ggplot2 geometry
 
 ```{r echo=TRUE,eval=FALSE}
 library(ggplot2)
@@ -117,12 +132,13 @@ movies <- read.csv("data/movie_metadata.csv")
 ```
 <br /> <br /> 
 
-## 6. Budżety filmowe * 
+## Movie budgets *
 
-### Opis 
-Wizualizacja lini trendu budżetów w filmach na przestrzeni lat<br />
-a) wszystkich filmów IMDb<br />
-b) TOP 500 filmów IMDb, czy z tą wizualizacją jest wszystko w porządku? <br />
+
+
+Visualisation of the trend line of budgets in films over the years <br />
+a) all IMDb films <br />
+b) TOP 500 IMDb films, is everything OK with this visualisation?<br />
 
 ```{r echo=TRUE,eval=FALSE}
 library(ggplot2)
@@ -138,15 +154,16 @@ movies500 <- head(movies, 500)
 ```
 <br /> <br /> 
 
-## 7. Aktorzy ** 
+## Actors **
 
-### Opis 
-Celem w tym zadaniu jest odtworzenie wykresu poniżej z jak największą ilością detali. 
-Dla ułatwienia w zadaniu zostały podane dwie funkcje, którch wykożystanie jest praktycznie niezbędne.
 
+
+The goal in this task is to reproduce the graph below with as many details as possible.
+To facilitate the task, two functions have been given, the use of which is practically necessary.
 <center>
 ![](img/g3_styl_2.png)
 </center>
+
 ```{r echo=TRUE,eval=FALSE}
 library(ggplot2)
 library(dplyr)
@@ -161,21 +178,21 @@ movies_actors <- movies%>%
 
 head(movies_actors)
 
-
-# 2 nowe rzeczy, których użycie będzie konieczne
-?geom_col
-?coord_flip
+# 2 new things you will need to use
+? geom_col
+? coord_flip
 ```
 <br /> <br /> 
 
-## 8. Czy filmy są coraz gorsze? *** 
+## Are the movies getting worse? ***
 
-### Opis 
-Celem zadania jest dokładne odtworzenie wykresu z poniższego zdjęcia
+
+The goal of the task is to accurately reproduce the graph from the photo below
 
 <center>
 ![](img/g3_styl_1.png)
 </center>
+
 ```{r echo=TRUE,eval=FALSE}
 library(ggplot2)
 library(dplyr)
@@ -190,5 +207,5 @@ movies_year <- movies%>%
 
 
 ```
-<br /> <br /> 
 
+<br /> <br />
