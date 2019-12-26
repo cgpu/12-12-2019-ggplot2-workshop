@@ -1,10 +1,11 @@
 ---
 title: "A set of tasks for getting familiar with the `{ggplot2}` R package"
 subtitle: "The tasks are from the workshops organised for December 12, 2019"
-output:
-  html_document:
-    df_print: paged
-    code_folding: show
+author: ""
+date: ""
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
     code_download: true
     toc: true                  # table of content true
     toc_depth: 3               # upto three depths of headings (specified by #, ## and ###)
@@ -12,8 +13,12 @@ output:
     number_sections: true     # if you want number sections at each table header
     theme: cosmo              # many options for theme, this one is my favorite.
     highlight: textmate           # specifies the syntax highlighting style
-    css: style.css
+    css: style.css               # you can add your custom css, should be in same folder
+    # override defaults by calling with custom params from command line https://bookdown.org/yihui/rmarkdown/params-knit.html 15.3.2
+editor_options:
+  chunk_output_type: console
 ---
+
 
 
 # Introduction
