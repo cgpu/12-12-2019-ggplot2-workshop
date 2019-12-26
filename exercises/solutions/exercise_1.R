@@ -5,6 +5,7 @@ library(SmarterPoland)
 library(tidyimpute)
 library(dplyr)
 
+
 # `countries` dataset is included in {SmarterPoland}
 # redundant but explicit which we like
 countries <- SmarterPoland::countries
@@ -14,16 +15,20 @@ if (nrow(dplyr::filter_all(countries, any_vars(is.na(.)))) > 0) {
   devtools::source_url('https://raw.githubusercontent.com/cgpu/xPanDaR/master/R/prepare_missingness_absence_presence_graph.R')
   prepare_missingness_absence_presence_graph(dplyr::filter_all(countries, any_vars(is.na(.))) ,  ts_id = 'country' ) + coord_flip() + theme(axis.text.x = element_text(angle = 50, hjust = 1))
 
-  # Perform basic imputation. Alt choose drop_na()
-  countries <- tidyimpute::impute_mean(countries)
+  # Perform basic imputation and round imputed cols
+  countries %>%
+    tidyimpute::impute_mean()  %>%
+    dplyr::mutate_if(is.numeric, round, digits = 1 ) ->
+    countries
+
 }
 
 # Start ggplotting
-ggplot(countries, aes(x     = death.rate,
-                      y     = birth.rate,
-                      label = country,
-                      size  = birth.rate,
-                      color = birth.rate)) +
+ggplt <- ggplot(countries, aes(x     = death.rate,
+                               y     = birth.rate,
+                               label = country,
+                               size  = birth.rate,
+                               color = birth.rate)) +
 
   geom_point() +
 
@@ -57,3 +62,5 @@ ggplot(countries, aes(x     = death.rate,
                         mid      = "#4A637B",
                         high     = "#f35f71",
                         space    = "Lab" )
+
+plotly::ggplotly(ggplt, tooltip = c("x","y","country"))
