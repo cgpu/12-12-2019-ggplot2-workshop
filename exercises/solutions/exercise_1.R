@@ -38,6 +38,9 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
                         high     = "#f35f71",
                         space    = "Lab" ) +
 
+  scale_size_continuous(range = c(0.05,3)) +
+
+
   # This is not redundant (cc' theme). See: https://github.com/tidyverse/ggplot2/issues/1859
   geom_text(data     = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
             size     = 3,
