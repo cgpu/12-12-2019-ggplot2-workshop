@@ -32,6 +32,12 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
 
   geom_point() +
 
+  scale_color_gradient2(midpoint = mean(countries$birth.rate),
+                        low      = "#4974a5",
+                        mid      = "#4A637B",
+                        high     = "#f35f71",
+                        space    = "Lab" ) +
+
   # This is not redundant (cc' theme). See: https://github.com/tidyverse/ggplot2/issues/1859
   geom_text(data     = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
             size     = 3,
@@ -55,12 +61,7 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
         ,plot.title      = element_text(size  = 14,hjust = 0 )
         ,plot.subtitle   = element_text(size  =  7,hjust = 1,face = "italic")
         ,plot.caption    = element_text(size  =  7)
-        ,legend.position = "none") +
+        ,legend.position = "none")
 
-  scale_color_gradient2(midpoint = mean(countries$birth.rate),
-                        low      = "#4974a5",
-                        mid      = "#4A637B",
-                        high     = "#f35f71",
-                        space    = "Lab" )
 
 plotly::ggplotly(ggplt, tooltip = c("x","y","country"))
