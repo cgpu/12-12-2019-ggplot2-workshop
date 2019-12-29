@@ -42,12 +42,10 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
 
 
   # This is not redundant (cc' theme). See: https://github.com/tidyverse/ggplot2/issues/1859
-  geom_text(data     = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
-            size     = 3,
-            vjust    = 1.5,
-            family   = "Helvetica",
-            fontface = "italic",
-            colour   = "#4A637B") +
+  geom_text(data          = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
+            aes(colour    = birth.rate),
+            size          = 14,
+            family        = "Helvetica") +
 
   labs(
     title     = "Countries with the highest and lowest birth rate in the world",
