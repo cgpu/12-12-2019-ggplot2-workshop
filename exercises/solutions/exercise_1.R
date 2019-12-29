@@ -68,6 +68,7 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
         ,plot.title      = element_text(size  = 14,hjust = 0 )
         ,plot.subtitle   = element_text(size  =  7,hjust = 1,face = "italic")
         ,plot.caption    = element_text(size  =  7)
+        ,panel.background = element_rect(fill = "white")
         ,legend.position = "none")
 
 
