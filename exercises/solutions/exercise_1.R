@@ -47,6 +47,12 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
             size          = 14,
             family        = "Helvetica") +
 
+  # Add Poland and Greece
+  geom_text(data          = countries[countries[["country"]] %in% c("Greece", "Poland"), ],
+            aes(colour    = birth.rate),
+            size          = 3,
+            family        = "Helvetica") +
+
   labs(
     title     = "Countries with the highest and lowest birth rate in the world",
     subtitle  = "12.12.19: Statistical inference with missing values + ggplot2 workshops",
