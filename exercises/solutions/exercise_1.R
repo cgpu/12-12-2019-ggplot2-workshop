@@ -4,7 +4,7 @@ library(ggplot2)
 library(SmarterPoland)
 library(tidyimpute)
 library(dplyr)
-
+library(devtools)
 
 # `countries` dataset is included in {SmarterPoland}
 # redundant but explicit which we like
