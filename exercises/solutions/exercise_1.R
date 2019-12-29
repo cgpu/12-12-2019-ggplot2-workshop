@@ -32,13 +32,26 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
 
   geom_point() +
 
+  scale_color_gradient2(midpoint = mean(countries$birth.rate),
+                        low      = "#4974a5",
+                        mid      = "#4A637B",
+                        high     = "#f35f71",
+                        space    = "Lab" ) +
+
+  scale_size_continuous(range = c(0.05,3)) +
+
+
   # This is not redundant (cc' theme). See: https://github.com/tidyverse/ggplot2/issues/1859
-  geom_text(data     = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
-            size     = 3,
-            vjust    = 1.5,
-            family   = "Helvetica",
-            fontface = "italic",
-            colour   = "#4A637B") +
+  geom_text(data          = countries[c(which.min(countries[["birth.rate"]]), which.max(countries[["birth.rate"]])),],
+            aes(colour    = birth.rate),
+            size          = 14,
+            family        = "Helvetica") +
+
+  # Add Poland and Greece
+  geom_text(data          = countries[countries[["country"]] %in% c("Greece", "Poland"), ],
+            aes(colour    = birth.rate),
+            size          = 3,
+            family        = "Helvetica") +
 
   labs(
     title     = "Countries with the highest and lowest birth rate in the world",
@@ -55,12 +68,8 @@ ggplt <- ggplot(countries, aes(x     = death.rate,
         ,plot.title      = element_text(size  = 14,hjust = 0 )
         ,plot.subtitle   = element_text(size  =  7,hjust = 1,face = "italic")
         ,plot.caption    = element_text(size  =  7)
-        ,legend.position = "none") +
+        ,panel.background = element_rect(fill = "white")
+        ,legend.position = "none")
 
-  scale_color_gradient2(midpoint = mean(countries$birth.rate),
-                        low      = "#4974a5",
-                        mid      = "#4A637B",
-                        high     = "#f35f71",
-                        space    = "Lab" )
 
 plotly::ggplotly(ggplt, tooltip = c("x","y","country"))
